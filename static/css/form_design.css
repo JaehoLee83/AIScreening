@@ -218,7 +218,24 @@ select option {
 }
 
 
-.vl {
-  border-left: 6px solid red;
-  height: 500px;
+.vertical-line {
+  border-left: 6px solid  #bd8200;
+  font-size: 1 em;
+  font-family: FontAwesome;
+  padding-left: 1em;
+}
+
+.reverse-background {
+  background-color: #bd8200;
+  padding: 1em;
+  font-size: 0.8 em;
+  font-family: FontAwesome;
+  text-align: center;
+  color: #fff;
+
+}
+
+.text-description {
+  font-size: 0.8 em;
+  font-family : FontAwesome;
 }

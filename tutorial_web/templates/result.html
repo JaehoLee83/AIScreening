@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%block content %}
+{% csrf_token %}
+<div class="container">
+    <h4> AI가 판단한 당신의 당뇨병 위험 정도입니다.</h4>
+    {% if AI_risk_score == 0 %}
+    <p> AI는 당신이 당뇨병에 걸렸을 확률이 높지 않다고 판단하고 있습니다. 그러나, 탈수 등 당뇨병 증상이 있을 경우 가까운 병원을 방문하시어 당뇨병 검사를 진행하시기 바랍니다.</p>
+    {% endif %}
+    {% if AI_risk_score == 1 %}
+    <p> AI는 당신이 당뇨병에 걸렸을 확률이 높다고 판단하고 있습니다. 가까운 병원에 방문하시어 혈당검사 등 당뇨병 관련 검사를 진행하시는 것을 추천합니다 </p>
+    {% endif %}
+</div>
+<p></p>
+<a href="/"> <input type="submit" value="돌아가기"> </a>
+{% endblock %}

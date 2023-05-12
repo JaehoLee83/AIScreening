@@ -64,12 +64,12 @@ def Get_data_with_null_check(data, dtype='int'):
 def index(request):
     return render(request, 'index.html')
 
-def survey(request):
-    form = SurveyForm()
-    if request.method == 'GET':
-        
-        return render(request, 'survey_form.html', {'form': form})
+ 
 
+def survey(request):
+    if request.method == 'GET':
+        form = SurveyForm()
+        return render(request, 'survey_form.html', {'form': form})
     if request.method == 'POST':
         age = Get_data_with_null_check(request.POST.get('age'))
         height = Get_data_with_null_check(request.POST.get('height'),'float')
@@ -84,33 +84,13 @@ def survey(request):
         exercise = Get_data_with_null_check(request.POST.get('exercise'))
         hypertension = Get_data_with_null_check(request.POST.get('hypertension'))
 
-        
-
         risk_score = make_korean_diabetes_index(age, waist_circumference, gender, tobacco, drink, family_diabetes, hypertension)
-        
         bmi = float(weight) / (float(height)/100)**2
         AI_risk_score = diabetes_screening(age, bmi, waist_circumference, family_diabetes, tobacco )
 
-        # 
-        ## 위험지수 저장하기 
         userinfo = {
             'age' : age,
-            'height' : height,
-            'weight' : weight,
-            'waist_circumference' : waist_circumference,
-            'bmi' : bmi,
-            'gender' : gender,
-            'drink' : drink,
-            'tobacco' : tobacco,
-            'family_diabetes' : family_diabetes,
-            'gestational' : gestational,
-            'exercise' : exercise,
-            'hypertension' : hypertension,
             'risk_score' : risk_score,
             'AI_risk_score' : AI_risk_score,
-            'form' : form
         }
-
-        return render(request, 'survey_form.html', userinfo)
-    else:
-        return render(request, 'survey_form.html')
+        return render(request, 'result.html', userinfo)
