@@ -13,28 +13,28 @@
             <h4> 당뇨병 위험 체크리스트 </h4>
 
             <div class="input-group input-group-icon">
-                <input type="number" placeholder="(세)" id="age" name="age">
+                {{ form.age }} 
                 <div class="input-icon">나이<i class="fa fa-user"></i></div>
             </div>
 
             <div class="input-group input-group-icon">
-                <input type="number" placeholder="(cm)" id="height" name="height">
+                {{ form.height }}
                 <div class="input-icon">키<i class="fa fa-user"></i></div>
             </div>            
 
             <div class="input-group input-group-icon">
-                <input type="number" placeholder="(kg)" id="weight" name="weight">
+                {{ form.weight }}
                 <div class="input-icon">몸무게<i class="fa fa-user"></i></div>
             </div>   
 
             <div class="input-group input-group-icon">
-                <input type="number" placeholder="(cm)" id="waist_circumference" name="waist_circumference">
+                {{ form.waist_circumference }} 
                 <div class="input-icon">허리둘레<i class="fa fa-user"></i></div>
             </div>  
 
             <div class="input-group">
                 <div class="input-icon">당신의 성별은 무엇입니까?<i class="fa fa-user"></i></div>
-                <input id="gender-male" type="radio" name="gender" value="0"/>
+                <input id="gender-male" type="radio" name="gender" value="0" checked="checked"/>
                 <label for="gender-male">남성</label>
                 <input id="gender-female" type="radio" name="gender" value="1"/>
                 <label for="gender-female">여성</label>
@@ -42,7 +42,7 @@
 
             <div class="input-group">
                 <div class="input-icon">가족 중에 당뇨병 환자가 있습니까?<i class="fa fa-user"></i></div>
-                <input id="family-no" type="radio" name="family_diabetes" value="0"/>
+                <input id="family-no" type="radio" name="family_diabetes" value="0" checked="checked"/>
                 <label for="family-no">없음</label>
                 <input id="family-yes" type="radio" name="family_diabetes" value="1"/>
                 <label for="family-yes">있음</label>
@@ -50,7 +50,7 @@
     
             <div class="input-group">
                 <div class="input-icon">고혈압 진단을 받은 적이 있습니까?<i class="fa fa-user"></i></div>
-                <input id="hypertension-no" type="radio" name="hypertension" value="0"/>
+                <input id="hypertension-no" type="radio" name="hypertension" value="0" checked="checked"/>
                 <label for="hypertension-no">없음</label>
                 <input id="hypertension-yes" type="radio" name="hypertension" value="1"/>
                 <label for="hypertension-yes">있음</label>
@@ -58,7 +58,7 @@
     
             <div class="input-group">
                 <div class="input-icon">임신성당뇨 진단을 받은 적이 있습니까?<i class="fa fa-user"></i></div>
-                <input id="gestational-no" type="radio" name="gestational" value="0"/>
+                <input id="gestational-no" type="radio" name="gestational" value="0" checked="checked"/>
                 <label for="gestational-no">없음</label>
                 <input id="gestational-yes" type="radio" name="gestational" value="1"/>
                 <label for="gestational-yes">있음</label>
@@ -66,7 +66,7 @@
             
             <div class="input-group">
                 <div class="input-icon">현재 흡연을 하고 계십니까?<i class="fa fa-user"></i></div>
-                <input id="tobacco-no" type="radio" name="tobacco" value="0"/>
+                <input id="tobacco-no" type="radio" name="tobacco" value="0" checked="checked"/>
                 <label for="tobacco-no">금연</label>
                 <input id="tobacco-yes" type="radio" name="tobacco" value="1"/>
                 <label for="tobacco-yes">흡연</label>
@@ -74,7 +74,7 @@
 
             <div class="input-group">
                 <div class="input-icon">하루 평균 음주량이 얼마나 되십니까?<i class="fa fa-user"></i></div>
-                <input id="drink-no" type="radio" name="drink" value="0"/>
+                <input id="drink-no" type="radio" name="drink" value="0" checked="checked"/>
                 <label for="drink-no">1잔 미만</label>
                 <input id="drink-small" type="radio" name="drink" value="1"/>
                 <label for="drink-small">1~4잔</label>
@@ -84,7 +84,7 @@
     
             <div class="input-group">
                 <div class="input-icon">하루 평균 운동량이 얼마나 되십니까?<i class="fa fa-user"></i></div>
-                <input id="exercise-no" type="radio" name="exercise" value="0"/>
+                <input id="exercise-no" type="radio" name="exercise" value="0" checked="checked"/>
                 <label for="exercise-no">30분 미만</label>
                 <input id="exercise-small" type="radio" name="exercise" value="1"/>
                 <label for="exercise-small">30~60분</label>
@@ -105,6 +105,7 @@
         {% endif %}
 
     </div>
+
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import UserInfo
+from .forms import SurveyForm
 import pickle
 import os 
 
@@ -61,6 +62,11 @@ def Get_data_with_null_check(data, dtype='int'):
     
 # Create your views here.
 def index(request):
+    form = SurveyForm()
+    if request.method == 'GET':
+        
+        return render(request, 'index.html', {'form': form})
+
     if request.method == 'POST':
         age = Get_data_with_null_check(request.POST.get('age'))
         height = Get_data_with_null_check(request.POST.get('height'),'float')
@@ -99,6 +105,7 @@ def index(request):
             'hypertension' : hypertension,
             'risk_score' : risk_score,
             'AI_risk_score' : AI_risk_score,
+            'form' : form
         }
 
         return render(request, 'index.html', userinfo)
