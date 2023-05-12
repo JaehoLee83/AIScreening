@@ -216,3 +216,9 @@ select option {
     padding-right: 0;
   }
 }
+
+
+.vl {
+  border-left: 6px solid red;
+  height: 500px;
+}
