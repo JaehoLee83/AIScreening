@@ -174,7 +174,6 @@ select option {
   transition: all 0.35s ease-in-out;
 }
 .container {
-  max-width: 38em;
   padding: 1em 3em 2em 3em;
   margin: 0em auto;
   background-color: #fff;

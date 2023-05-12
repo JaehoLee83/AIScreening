@@ -97,13 +97,11 @@
     <p></p>
     <div class="container">
         <h4> 당뇨병 위험도 체크 결과</h4>
-        {% if AI_risk_score %}
         {% if AI_risk_score == 0 %}
         <p> AI가 판단하기에 당뇨병 위험도가 높지 않습니다. 그러나 관련 증상이 있으시면 검사를 받으시기 바랍니다.</p>
         {% endif %}
         {% if AI_risk_score == 1 %}
         <p> AI가 판단하기에 당뇨병 위험도가 높습니다. 가까운 내과에 방문하시어 혈당검사를 받으시기를 권고합니다.</p>
-        {% endif %}
         {% endif %}
 
     </div>
