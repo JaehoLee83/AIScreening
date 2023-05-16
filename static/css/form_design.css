@@ -16,6 +16,15 @@ h4 {
   text-align: center;
 }
 
+h2 {
+  color: #v;
+  text-align: center;
+}
+
+h3{
+  color: #06B4DD;
+}
+
 input,
 input[type="radio"] + label,
 input[type="checkbox"] + label:before,
@@ -38,10 +47,10 @@ input:focus {
   border-color: #bd8200;
 }
 input:focus + .input-icon i {
-  color: #f0a500;
+  color: #06B4DD;
 }
 input:focus + .input-icon:after {
-  border-right-color: #f0a500;
+  border-right-color: #06B4DD;
 }
 input[type="radio"] {
   display: none;
@@ -69,7 +78,7 @@ input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
-  background-color: #f0a500;
+  background-color: #06B4DD;
   color: #fff;
   border-color: #bd8200;
 }
