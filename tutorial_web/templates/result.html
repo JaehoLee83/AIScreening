@@ -3,14 +3,14 @@
 {%block content %}
 {% csrf_token %}
 <div class="container">
-    <h1 align="center"> AI가 판단한 당신의 당뇨병 위험 정도입니다.</h1>
+    <h1 align="center"> Đây là kết quả nguy cơ mắc bệnh đái tháo đường của Quý vị được xác định bởi AI. </h1>
     {% if AI_risk_score == 0 %}
-    <h3> AI는 당신이 당뇨병에 걸렸을 확률이 높지 않다고 판단하고 있습니다. 그러나, 탈수 등 당뇨병 증상이 있을 경우 가까운 병원을 방문하시어 당뇨병 검사를 진행하시기 바랍니다. </h3> 
+    <h3>AI nhận định khả năng mắc bệnh đái tháo đường của Quý vị không cao. Tuy nhiên, trong trường hợp Quý vị có các triệu chứng của bệnh đái tháo đường như mất nước, xin vui lòng đến bệnh viện gần nhất và làm xét nghiệm đái tháo đường. </h3> 
     {% endif %}
     {% if AI_risk_score == 1 %}
-    <h3> AI는 당신이 당뇨병에 걸렸을 확률이 높다고 판단하고 있습니다. 가까운 병원에 방문하시어 혈당검사 등 당뇨병 관련 검사를 진행하시는 것을 추천합니다 </h3>
+    <h3> AI nhận định Quý vị có khả năng mắc bệnh đái tháo đường cao. Quý vị nên đến bệnh viện gần nhất và làm xét nghiệm liên quan đến bệnh đái tháo đường như xét nghiệm đường huyết…</h3>
     {% endif %}
 </div>
 <p></p>
-<a href="/"> <input type="submit" style="font-size:15pt;" value="돌아가기"> </a>
+<a href="/"> <input type="submit" style="font-size:15pt;" value="Quay lại"> </a>
 {% endblock %}

@@ -4,88 +4,88 @@
 <div class="container">
     <form method="post">
         {% csrf_token %}
-        <h2> 당뇨병 위험 체크리스트 </h2>
+        <h2> Danh sách kiểm tra nguy cơ bệnh đái tháo đường</h2>
 
         <div class="input-group input-group-icon">
             {{ form.age }} 
-            <div class="input-icon">나이<i class="fa fa-user"></i></div>
+            <div class="input-icon"> Tuổi <i class="fa fa-user"></i></div>
         </div>
 
         <div class="input-group input-group-icon">
             {{ form.height }}
-            <div class="input-icon">키<i class="fa fa-user"></i></div>
+            <div class="input-icon">Chiều cao<i class="fa fa-user"></i></div>
         </div>            
 
         <div class="input-group input-group-icon">
             {{ form.weight }}
-            <div class="input-icon">몸무게<i class="fa fa-user"></i></div>
+            <div class="input-icon">Cân nặng<i class="fa fa-user"></i></div>
         </div>   
 
         <div class="input-group input-group-icon">
             {{ form.waist_circumference }} 
-            <div class="input-icon">허리둘레<i class="fa fa-user"></i></div>
+            <div class="input-icon">Vòng eo<i class="fa fa-user"></i></div>
         </div>  
 
         <div class="input-group">
-            <div class="input-icon"> <h3>당신의 성별은 무엇입니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"> <h3> Giới tính của Quý vị là gì? </h3><i class="fa fa-user"></i></div>
             <input id="gender-male" type="radio" name="gender" value="0" checked="checked"/>
-            <label for="gender-male">남성</label>
+            <label for="gender-male">Nam</label>
             <input id="gender-female" type="radio" name="gender" value="1"/>
-            <label for="gender-female">여성</label>
+            <label for="gender-female">Nữ</label>
         </div>
 
         <div class="input-group">
-            <div class="input-icon"><h3>  가족 중에 당뇨병 환자가 있습니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"><h3> Trong gia đình Quý vị có người mắc bệnh đái tháo đường không? </h3><i class="fa fa-user"></i></div>
             <input id="family-no" type="radio" name="family_diabetes" value="0" checked="checked"/>
-            <label for="family-no">없음</label>
+            <label for="family-no">Không</label>
             <input id="family-yes" type="radio" name="family_diabetes" value="1"/>
-            <label for="family-yes">있음</label>
+            <label for="family-yes">Có</label>
         </div>
 
         <div class="input-group">
-            <div class="input-icon"><h3> 고혈압 진단을 받은 적이 있습니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"><h3> Quý vị đã bao giờ được chấn đoán bị cao huyết áp chưa? </h3><i class="fa fa-user"></i></div>
             <input id="hypertension-no" type="radio" name="hypertension" value="0" checked="checked"/>
-            <label for="hypertension-no">없음</label>
+            <label for="hypertension-no">Không</label>
             <input id="hypertension-yes" type="radio" name="hypertension" value="1"/>
-            <label for="hypertension-yes">있음</label>
+            <label for="hypertension-yes">Có</label>
         </div>
 
         <div class="input-group">
-            <div class="input-icon"><h3> 임신성당뇨 진단을 받은 적이 있습니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"><h3> Bạn có tiền sử đái tháo đường thai kỳ không? </h3><i class="fa fa-user"></i></div>
             <input id="gestational-no" type="radio" name="gestational" value="0" checked="checked"/>
-            <label for="gestational-no">없음</label>
+            <label for="gestational-no">Không</label>
             <input id="gestational-yes" type="radio" name="gestational" value="1"/>
-            <label for="gestational-yes">있음</label>
+            <label for="gestational-yes">Có</label>
         </div>
         
         <div class="input-group">
-            <div class="input-icon"> <h3> 현재 흡연을 하고 계십니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"> <h3> Hiện nay, Quý vị có đang hút thuốc không? </h3><i class="fa fa-user"></i></div>
             <input id="tobacco-no" type="radio" name="tobacco" value="0" checked="checked"/>
-            <label for="tobacco-no">금연</label>
+            <label for="tobacco-no">Không hút thuốc</label>
             <input id="tobacco-yes" type="radio" name="tobacco" value="1"/>
-            <label for="tobacco-yes">흡연</label>
+            <label for="tobacco-yes">Hút thuốc</label>
         </div>
 
         <div class="input-group 3">
-            <div class="input-icon"><h3> 하루 평균 음주량이 얼마나 되십니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"><h3> Lượng rượu trung bình Quý vị uống mỗi ngày là bao nhiêu? </h3><i class="fa fa-user"></i></div>
             <input id="drink-no" type="radio" name="drink" value="0" checked="checked"/>
-            <label for="drink-no">1잔 미만</label>
+            <label for="drink-no"> Dưới 1 chén </label>
             <input id="drink-small" type="radio" name="drink" value="1"/>
-            <label for="drink-small">1~4잔</label>
+            <label for="drink-small">Từ 1 ~ 4 chén </label>
             <input id="drink-heavy" type="radio" name="drink" value="2"/>
-            <label for="drink-heavy">5잔 이상</label>
+            <label for="drink-heavy"> Từ 5 chén trở lên </label>
         </div>
 
         <div class="input-group">
-            <div class="input-icon"> <h3> 하루 평균 운동량이 얼마나 되십니까? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"> <h3> Thời gian tập thể dục trung bình mỗi ngày của Quý vị là bao lâu? </h3><i class="fa fa-user"></i></div>
             <input id="exercise-no" type="radio" name="exercise" value="0" checked="checked"/>
-            <label for="exercise-no">30분 미만</label>
+            <label for="exercise-no"> Dưới 30 phút </label>
             <input id="exercise-small" type="radio" name="exercise" value="1"/>
-            <label for="exercise-small">30~60분</label>
+            <label for="exercise-small"> Từ 30 ~ 60 phút </label>
             <input id="exercise-heavy" type="radio" name="exercise" value="2"/>
-            <label for="exercise-heavy">60분 이상</label>
+            <label for="exercise-heavy"> Từ 60 phút trở lên </label>
         </div>   
-        <input type="submit" style="font-size:15pt;" value="제출하기">
+        <input type="submit" style="font-size:15pt;" value="Gửi">
     </form>
 </div>
 
