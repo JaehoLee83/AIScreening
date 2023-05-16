@@ -12,7 +12,7 @@ body {
   background-color: #e3e3e3;
 }
 h4 {
-  color: #f0a500;
+  color: #06B4DD;
   text-align: center;
 }
 
@@ -95,7 +95,7 @@ input[type="checkbox"] + label:after {
   position: absolute;
   top: 0.45em;
   left: 0.2em;
-  font-size: 0.8em;
+  font-size: 1.1em;
   color: #fff;
   opacity: 0;
   font-family: FontAwesome;
@@ -219,14 +219,14 @@ select option {
 
 
 .vertical-line {
-  border-left: 6px solid  #bd8200;
+  border-left: 6px solid  #06B4DD;
   font-size: 1 em;
   font-family: FontAwesome;
   padding-left: 1em;
 }
 
 .reverse-background {
-  background-color: #bd8200;
+  background-color: #06B4DD;
   padding: 1em;
   font-size: 0.8 em;
   font-family: FontAwesome;
