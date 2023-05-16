@@ -4,7 +4,7 @@
 <div class="container">
     <form method="post">
         {% csrf_token %}
-        <h2> Danh sách kiểm tra nguy cơ bệnh đái tháo đường</h2>
+        <h2> Bảng câu hỏi khảo sát nguy cơ đái tháo đường</h2>
 
         <div class="input-group input-group-icon">
             {{ form.age }} 
@@ -43,7 +43,7 @@
         </div>
 
         <div class="input-group">
-            <div class="input-icon"><h3> Quý vị đã bao giờ được chấn đoán bị cao huyết áp chưa? </h3><i class="fa fa-user"></i></div>
+            <div class="input-icon"><h3> Quý vị đã bao giờ được chẩn đoán bị cao huyết áp chưa? </h3><i class="fa fa-user"></i></div>
             <input id="hypertension-no" type="radio" name="hypertension" value="0" checked="checked"/>
             <label for="hypertension-no">Không</label>
             <input id="hypertension-yes" type="radio" name="hypertension" value="1"/>
