@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {%block content %}
 {% csrf_token %}
 
@@ -23,6 +23,13 @@
             {% if AI_risk_score == 1 %}
             <h5> Quý vị nên đến bệnh viện gần nhất để làm xét nghiệm đường huyết. </h5>
             {% endif %} 
+
+            
+            <div class="my-auto text-center mt-5"> 
+                <h5> Để biết thêm thông tin chi tiết về bệnh đái tháo đường, vui lòng truy cập trang web bên dưới. </h5>
+                <img src="{% static 'images/QR.png' %}"  height="200" alt="QR LINK"/>
+            </div>
+
         </div>
     </div>
 
