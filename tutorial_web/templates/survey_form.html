@@ -4,88 +4,99 @@
 <div class="container">
     <form method="post">
         {% csrf_token %}
-        <h2> Bảng câu hỏi khảo sát nguy cơ đái tháo đường</h2>
-
-        <div class="input-group input-group-icon">
-            {{ form.age }} 
-            <div class="input-icon"> Tuổi <i class="fa fa-user"></i></div>
+        <div class="py-3 mt-3 text-bg-secondary bg-opacity-50 border-light rounded-3 text-center">
+            <h4> Bảng câu hỏi khảo sát nguy cơ đái tháo đường</h2>
         </div>
 
-        <div class="input-group input-group-icon">
-            {{ form.height }}
-            <div class="input-icon">Chiều cao<i class="fa fa-user"></i></div>
-        </div>            
-
-        <div class="input-group input-group-icon">
-            {{ form.weight }}
-            <div class="input-icon">Cân nặng<i class="fa fa-user"></i></div>
-        </div>   
-
-        <div class="input-group input-group-icon">
-            {{ form.waist_circumference }} 
-            <div class="input-icon">Vòng eo<i class="fa fa-user"></i></div>
-        </div>  
-
-        <div class="input-group">
-            <div class="input-icon"> <h3> Giới tính của Quý vị là gì? </h3><i class="fa fa-user"></i></div>
-            <input id="gender-male" type="radio" name="gender" value="0" checked="checked"/>
-            <label for="gender-male">Nam</label>
-            <input id="gender-female" type="radio" name="gender" value="1"/>
-            <label for="gender-female">Nữ</label>
+        <div class="form-group row mb-3 mt-3">
+            <label for="age" class="col-sm-2 col-form-label"> Tuổi </label>
+            <div class="col-sm-10"> 
+                {{ form.age }}
+            </div>
         </div>
 
-        <div class="input-group">
-            <div class="input-icon"><h3> Trong gia đình Quý vị có người mắc bệnh đái tháo đường không? </h3><i class="fa fa-user"></i></div>
-            <input id="family-no" type="radio" name="family_diabetes" value="0" checked="checked"/>
-            <label for="family-no">Không</label>
-            <input id="family-yes" type="radio" name="family_diabetes" value="1"/>
-            <label for="family-yes">Có</label>
+        <div class="form-group row mb-3 mt-3">
+            <label for="height" class="col-sm-2 col-form-label"> Chiều cao </label>
+            <div class="col-sm-10"> 
+                {{ form.height }}
+            </div>
         </div>
 
-        <div class="input-group">
-            <div class="input-icon"><h3> Quý vị đã bao giờ được chẩn đoán bị cao huyết áp chưa? </h3><i class="fa fa-user"></i></div>
-            <input id="hypertension-no" type="radio" name="hypertension" value="0" checked="checked"/>
-            <label for="hypertension-no">Không</label>
-            <input id="hypertension-yes" type="radio" name="hypertension" value="1"/>
-            <label for="hypertension-yes">Có</label>
+        <div class="form-group row mb-3 mt-3">
+            <label for="weight" class="col-sm-2 col-form-label"> Cân nặng </label>
+            <div class="col-sm-10"> 
+                {{ form.weight }}
+            </div>
         </div>
 
-        <div class="input-group">
-            <div class="input-icon"><h3> Bạn có tiền sử đái tháo đường thai kỳ không? </h3><i class="fa fa-user"></i></div>
-            <input id="gestational-no" type="radio" name="gestational" value="0" checked="checked"/>
-            <label for="gestational-no">Không</label>
-            <input id="gestational-yes" type="radio" name="gestational" value="1"/>
-            <label for="gestational-yes">Có</label>
-        </div>
-        
-        <div class="input-group">
-            <div class="input-icon"> <h3> Hiện nay, Quý vị có đang hút thuốc không? </h3><i class="fa fa-user"></i></div>
-            <input id="tobacco-no" type="radio" name="tobacco" value="0" checked="checked"/>
-            <label for="tobacco-no">Không hút thuốc</label>
-            <input id="tobacco-yes" type="radio" name="tobacco" value="1"/>
-            <label for="tobacco-yes">Hút thuốc</label>
+        <div class="form-group row mb-3 mt-3">
+            <label for="waist_circumference" class="col-sm-2 col-form-label"> Vòng eo </label>
+            <div class="col-sm-10"> 
+                {{ form.waist_circumference }}
+            </div>
         </div>
 
-        <div class="input-group 3">
-            <div class="input-icon"><h3> Lượng rượu trung bình Quý vị uống mỗi ngày là bao nhiêu? </h3><i class="fa fa-user"></i></div>
-            <input id="drink-no" type="radio" name="drink" value="0" checked="checked"/>
-            <label for="drink-no"> Dưới 1 chén </label>
-            <input id="drink-small" type="radio" name="drink" value="1"/>
-            <label for="drink-small">Từ 1 ~ 4 chén </label>
-            <input id="drink-heavy" type="radio" name="drink" value="2"/>
-            <label for="drink-heavy"> Từ 5 chén trở lên </label>
+        <div class="mb-2">
+            <h5> Giới tính của Quý vị là gì? </h5>
+            <input type="radio" class="btn-check" name="gender" value="0" id="gender-male" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="gender-male">Nam</label>
+            <input type="radio" class="btn-check" name="gender" value="1" id="gender-female" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="gender-female">Nữ</label>       
         </div>
 
-        <div class="input-group">
-            <div class="input-icon"> <h3> Thời gian tập thể dục trung bình mỗi ngày của Quý vị là bao lâu? </h3><i class="fa fa-user"></i></div>
-            <input id="exercise-no" type="radio" name="exercise" value="0" checked="checked"/>
-            <label for="exercise-no"> Dưới 30 phút </label>
-            <input id="exercise-small" type="radio" name="exercise" value="1"/>
-            <label for="exercise-small"> Từ 30 ~ 60 phút </label>
-            <input id="exercise-heavy" type="radio" name="exercise" value="2"/>
-            <label for="exercise-heavy"> Từ 60 phút trở lên </label>
-        </div>   
-        <input type="submit" style="font-size:15pt;" value="Gửi">
+        <div class="mb-2">
+            <h5> Trong gia đình Quý vị có người mắc bệnh đái tháo đường không? </h5>
+            <input type="radio" class="btn-check" name="family_diabetes" value="0" id="family-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="family-no">Không</label>
+            <input type="radio" class="btn-check" name="family_diabetes" value="1" id="family-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="family-yes">Có</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> Quý vị đã bao giờ được chẩn đoán bị cao huyết áp chưa? </h5>
+            <input type="radio" class="btn-check" name="hypertension" value="0" id="hypertension-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="hypertension-no">Không</label>
+            <input type="radio" class="btn-check" name="hypertension" value="1" id="hypertension-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="hypertension-yes">Có</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> Bạn có tiền sử đái tháo đường thai kỳ không? </h5>
+            <input type="radio" class="btn-check" name="gestational" value="0" id="gestational-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="gestational-no">Không</label>
+            <input type="radio" class="btn-check" name="gestational" value="1" id="gestational-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="gestational-yes">Có</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> Hiện nay, Quý vị có đang hút thuốc không? </h5>
+            <input type="radio" class="btn-check" name="tobacco" value="0" id="tobacco-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="tobacco-no">Không hút thuốc</label>
+            <input type="radio" class="btn-check" name="tobacco" value="1" id="tobacco-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="tobacco-yes">Hút thuốc</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> Lượng rượu trung bình Quý vị uống mỗi ngày là bao nhiêu? </h5>
+            <input type="radio" class="btn-check" name="drink" value="0" id="drink-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="drink-no">Dưới 1 chén</label>
+            <input type="radio" class="btn-check" name="drink" value="1" id="drink-small" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="drink-small">Từ 1 ~ 4 chén</label>  
+            <input type="radio" class="btn-check" name="drink" value="2" id="drink-heavy" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="drink-heavy">Từ 5 chén trở lên</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> Thời gian tập thể dục trung bình mỗi ngày của Quý vị là bao lâu? </h5>
+            <input type="radio" class="btn-check" name="exercise" value="0" id="exercise-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="exercise-no">Dưới 30 phút</label>
+            <input type="radio" class="btn-check" name="exercise" value="1" id="exercise-small" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="exercise-small">Từ 30 ~ 60 phút</label>  
+            <input type="radio" class="btn-check" name="exercise" value="2" id="exercise-heavy" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="exercise-heavy">Từ 60 phút trở lên</label>    
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100"> Gửi </button> 
     </form>
 </div>
 

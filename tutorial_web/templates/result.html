@@ -2,17 +2,36 @@
 
 {%block content %}
 {% csrf_token %}
-<div class="container">
-    <h2 align="center">Công nghệ Trí tuệ nhân tạo cho ra kết của nguy cơ đái tháo đường của Quý vị như sau:  </h2>
-    {% if AI_risk_score == 0 %}
-    <h1 align="center" style="color:black"> Nguy cơ thấp. </h1> 
-    <h3> Tuy nhiên, khi có các triệu chứng của đái tháo đường, vui lòng đến bệnh viện gần nhất để làm các xét nghiệm đái tháo đường. </h3>
-    {% endif %}
-    {% if AI_risk_score == 1 %}
-    <h1 align="center" style="color:black">  Nguy cơ cao. </h1>
-    <h3> Quý vị nên đến bệnh viện gần nhất để làm xét nghiệm đường huyết. </h3>
-    {% endif %}
+
+<div class="col">
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> Công nghệ Trí tuệ nhân tạo cho ra kết của nguy cơ đái tháo đường của Quý vị như sau </h4>
+        </div>
+        <div class="card-body">
+            <div class="py-3 text-bg-warning bg-warning border-light rounded-3 text-center mb-3">
+                {% if AI_risk_score == 0 %}
+                <h1> Nguy cơ thấp </h1>
+                {% endif %} 
+                {% if AI_risk_score == 1 %}
+                <h1> Nguy cơ cao </h1>
+                {% endif %}                 
+            </div>
+            {% if AI_risk_score == 0 %}
+            <h5> Tuy nhiên, khi có các triệu chứng của đái tháo đường, vui lòng đến bệnh viện gần nhất để làm các xét nghiệm đái tháo đường. </h5>
+            {% endif %} 
+            {% if AI_risk_score == 1 %}
+            <h5> Quý vị nên đến bệnh viện gần nhất để làm xét nghiệm đường huyết. </h5>
+            {% endif %} 
+        </div>
+    </div>
+
+    <div class="ms-4 me-4">
+        <a href="/"> 
+            <button type="button" class="w-100 btn btn-lg btn-primary"> Quay lại </button>
+        </a>
+    </div>
+
 </div>
-<p></p>
-<a href="/"> <input type="submit" style="font-size:15pt;" value="Quay lại"> </a>
+
 {% endblock %}

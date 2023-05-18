@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 {% load static %}
+{% load bootstrap_icons %}
 <html>
 <head>
     <meta charset="UTF-8">
     <title>AI Screening</title>
-    <link rel="stylesheet" href="{% static 'css/form_design.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <div class="container">
-        <div style="margin-left:1%; float:left;">
-            <img src="{% static 'images/DrAround.png' %}" width="100" alt="logo"/>
-        </div>
-        <div style="vertical-align:middle; text-align:center">
-             <h1> AI Screening </h1>
-             
-        </div> 
-    </div>
 
-    <p></p>
+    <header class="border-bottom">
+        <div class="px-3 py-2 text-bg-white ms-5 me-5">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-black text-decoration-none"> 
+                    <h2> AI Screening </h2> 
+                </a>
+                <ul class="nav col-12 col-lg-auto my-auto justify-content-center my-md-0 text-small">
+                    <li>
+                        <div class="my-auto" style="height: 80px; padding-top:20px;margin-right:20px"> 
+                            <img src="{% static 'images/KTHV.png' %}"  height="40" alt="KT Healthcare VINA"/>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="{% static 'images/HMUH.png' %}" height="80" alt="HMUH"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     {% block content %}
-
     {% endblock %}
 
 </body>

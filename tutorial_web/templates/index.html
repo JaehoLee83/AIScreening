@@ -1,34 +1,46 @@
 {% extends 'base.html' %}
 
 {%block content %}
-
-<div class="container">
-
-    <p></p>
-    <div class="text-description">
-        <h3> Ứng dụng công nghệ AI giúp Quý vị có thể đo lường mức độ nguy hiểm của bệnh đái tháo đường chỉ thông qua các câu hỏi khảo sát đơn giản nhằm phát hiện sớm người có
-            nguy cơ cao. Chúng tôi đang tiến hành đồng nghiên cứu để phát triển mô hình cùng với Bệnh Viện Đại Học Y Hà Nội, và Quý vị có thể trải nghiệm kết quả của giai đoạn giữa dự án tại đây. </h3>
-        <p></p>
-        <div class="reverse-background"> 
-            <h1> Đây là sản phẩm thử nghiệm, chưa được cấp phép trang thiết bị y tế. </h1>
-            <p> Chú ý: Trải nghiệm này không phải là một hoạt động y tế nhằm chẩn đoán hay điều trị bệnh đái tháo đường. Do đó, bất kể kết quả trải nghiệm này ra sao, trong trường hợp có triệu chứng của bệnh đái tháo đường, xin Quý vị vui lòng tới bệnh viện gần nhất để được thăm khám.  </p>
+<p> </p>
+<div class="col">
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> AI Screening for Diabetes </h4>
+        </div>
+        <div class="card-body">
+            <h5> Ứng dụng công nghệ AI giúp Quý vị có thể đo lường mức độ nguy hiểm của bệnh đái tháo đường chỉ thông qua các câu hỏi khảo sát đơn giản nhằm phát hiện sớm người có
+                nguy cơ cao. Chúng tôi đang tiến hành đồng nghiên cứu để phát triển mô hình cùng với Bệnh Viện Đại Học Y Hà Nội, và Quý vị có thể trải nghiệm kết quả của giai đoạn giữa dự án tại đây. 
+            </h5>
+            <p></p>
+            <div class="py-3 text-bg-warning bg-opacity-25 border-light rounded-3 text-center">
+                <h4> Đây là sản phẩm thử nghiệm, chưa được cấp phép trang thiết bị y tế. </h4>
+            </div>
+            <p></p>    
+            <h5> Trải nghiệm này không phải là một hoạt động y tế nhằm chẩn đoán hay điều trị bệnh đái tháo đường. Do đó, bất kể kết quả trải nghiệm này ra sao, trong trường hợp có triệu chứng của bệnh đái tháo đường, xin Quý vị vui lòng tới bệnh viện gần nhất để được thăm khám. </h5>
         </div>
     </div>
 
-    <p></p><p></p>
-    <h2 align="center"> Điều khoản sử dụng </h2>
-    <div class="text-description">
-        Chúng tôi sẽ thu thập và sử dụng các thông tin dưới đây để phục vụ việc trải nghiệm của Quý vị trong nghiên cứu này.
-        <p></p>
-        <li> Thông tin về chỉ số cơ thể: tuổi, giới tính, chiều cao, cân nặng, vòng eo </li>
-        <li> Thông tin về thói quen sinh hoạt: thói quen hút thuốc, thói quen uống rượu, thói quen tập thể dục </li>
-        <li> Thông tin bệnh lý: cao huyết áp, bệnh sử gia đình, thông tin về bệnh lý đã được chẩn đoán trong quá khứ hoặc hiện nay đang mắc như tiểu đường thai kỳ </li>
-        <p></p>
-        Thông tin thu thập được sử dụng làm giá trị đầu vào của mô hình dịch vụ trải nghiệm sàng lọc ứng dụng AI này, và sẽ được hủy bỏ ngay sau khi đạt được mục tiêu.
-        Quý vị vui lòng xác nhận đồng ý với các nội dung nêu trên để bắt đầu trải nghiệm dịch vụ sàng lọc ứng dụng AI.
-        <p></p>
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> Điều khoản sử dụng </h4>
+        </div>
+        <div class="card-body">
+            <h5> Chúng tôi sẽ thu thập và sử dụng các thông tin dưới đây để phục vụ việc trải nghiệm của Quý vị trong nghiên cứu này. </h5>
+            <h5 class="ms-4"> 
+                <li> Thông tin về chỉ số cơ thể: tuổi, giới tính, chiều cao, cân nặng, vòng eo </li>
+                <li> Thông tin về thói quen sinh hoạt: thói quen hút thuốc, thói quen uống rượu, thói quen tập thể dục </li>
+                <li> Thông tin bệnh lý: cao huyết áp, bệnh sử gia đình, thông tin về bệnh lý đã được chẩn đoán trong quá khứ hoặc hiện nay đang mắc như tiểu đường thai kỳ </li>
+            </h5>
+            <h5> Thông tin thu thập được sử dụng làm giá trị đầu vào của mô hình dịch vụ trải nghiệm sàng lọc ứng dụng AI này, và sẽ được hủy bỏ ngay sau khi đạt được mục tiêu. Quý vị vui lòng xác nhận đồng ý với các nội dung nêu trên để bắt đầu trải nghiệm dịch vụ sàng lọc ứng dụng AI. </h5>
+        </div>
     </div>
-    <a href="/survey"> <input type="submit" style="font-size:15pt;" value="Đồng ý và trải nghiệm"> </a>
+    <div class="ms-4 me-4">
+        <a href="/survey"> 
+            <button type="button" class="w-100 btn btn-lg btn-primary"> Đồng ý và trải nghiệm </button>
+        </a>
+    </div>
+    
+
 </div>
 
 {% endblock %}
