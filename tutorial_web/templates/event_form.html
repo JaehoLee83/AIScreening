@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %}
+
+<div class="col mt-2">
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> EVENT : Intensive Care의 월 사용 가격 맞추기! </h4>
+        </div>
+
+        <div class="card-body align-items-center">
+            <h4 class="my-0 font-weight-bold text-center"> Intensive Care는 아래와 같은 서비스를 고객에게 제공합니다.</h4>
+            <ul class="list-group w-75 mt-4" style="float:none; margin:0 auto;">
+                <li class="list-group-item">
+                    <img class="ms-5" src="{% static 'images/recoding.png' %}"  height="50" alt="Self Recoding"/>
+                    &nbsp;&nbsp;&nbsp; 앱으로 혈당, 운동, 식단을 기록하고 관리할 수 있습니다.
+
+                </li>
+                <li class="list-group-item">
+                    <img class="ms-5" src="{% static 'images/coaching.png' %}"  height="50" alt="Coaching"/>
+                    &nbsp;&nbsp;&nbsp; 전문 간호사가 생활습관 개선을 위해 매일 코칭을 합니다.
+                </li>
+                <li class="list-group-item">
+                    &nbsp;
+                    <img class="ms-5" src="{% static 'images/consulting.png' %}"  height="50" alt="Consulting"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp; 전문 의료진과의 온라인 상담 및 Q&A를 할 수 있습니다.
+                </li>
+                <li class="list-group-item">
+                    <img class="ms-5" src="{% static 'images/contents.png' %}"  height="50" alt="Consulting"/>
+                    &nbsp;&nbsp;&nbsp; 당뇨병 관리를 위한 온라인 교육 및 전문 콘텐츠를 시청할 수 있습니다.
+                </li>
+            </ul>
+            <div class="py-3 w-75 mt-4 text-bg-warning bg-opacity-25 border-light rounded-3 text-center" style="float:none; margin:0 auto;">
+                <h4> 2024년 출시 예정인 이 서비스의 한 달 가격은 얼마일까요? </h4>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group row mb-3 mt-3 w-75" style="float:none; margin:0 auto;">
+                    <label for="price" class="col-sm-2 col-form-label"> 가격 </label>
+                    <div class="col-sm-10"> 
+                        {{ form.price }}
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"> 제출하기 </button> 
+            </form>
+            
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

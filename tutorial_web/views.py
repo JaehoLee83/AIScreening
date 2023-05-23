@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import UserInfo
-from .forms import SurveyForm
+from .models import UserInfo, EventInfo
+from .forms import SurveyForm, EventForm
 import pickle
 import os 
 
@@ -94,3 +94,21 @@ def survey(request):
             'AI_risk_score' : AI_risk_score,
         }
         return render(request, 'result.html', userinfo)
+    
+def event(request):
+    if request.method == 'GET':
+        form = EventForm()
+        return render(request, 'event_form.html', {'form': form})
+    if request.method == 'POST':    
+        event_result = 0
+
+        price = Get_data_with_null_check(request.POST.get('price'))
+        Price = EventInfo(price=price)
+        Price.save()
+
+        if price == 500000:
+            event_result = "YES"
+        else:
+            event_result = "NO"
+
+        return render(request, 'event_result.html', {'event_result' : event_result})
