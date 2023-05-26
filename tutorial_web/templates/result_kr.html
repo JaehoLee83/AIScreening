@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %}
+{% csrf_token %}
+
+<div class="col">
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> 인공지능은 당신의 당뇨병 위험을 아래와 같이 평가하였습니다. </h4>
+        </div>
+        <div class="card-body">
+            <div class="py-3 text-bg-warning bg-warning border-light rounded-3 text-center mb-3">
+                {% if AI_risk_score == 0 %}
+                <h1> 위험도 낮음 </h1>
+                {% endif %} 
+                {% if AI_risk_score == 1 %}
+                <h1> 위험도 높음 </h1>
+                {% endif %}                 
+            </div>
+            {% if AI_risk_score == 0 %}
+            <h5> 다만, 당뇨병과 관련한 증상이 있는 경우에는 가까운 병원에 방문하시어 검사를 받으시기 바랍니다. </h5>
+            {% endif %} 
+            {% if AI_risk_score == 1 %}
+            <h5> 가까운 병원을 방문하시어 당뇨병 검사를 받으시기를 권고합니다. </h5>
+            {% endif %} 
+
+            
+            <div class="my-auto text-center mt-5"> 
+                <h5> 당뇨병에 대한 자세한 정보를 보시려면 아래 QR에 접속하세요 </h5>
+                <img src="{% static 'images/QR.png' %}"  height="200" alt="QR LINK"/>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ms-4 me-4">
+        <a href="/"> 
+            <button type="button" class="w-100 btn btn-lg btn-primary"> Quay lại </button>
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

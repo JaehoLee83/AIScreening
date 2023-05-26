@@ -112,3 +112,40 @@ def event(request):
             event_result = "NO"
 
         return render(request, 'event_result.html', {'event_result' : event_result})
+    
+
+
+    # Create your views here.
+def index_kr(request):
+    return render(request, 'index_kr.html')
+
+ 
+
+def survey(request):
+    if request.method == 'GET':
+        form = SurveyForm()
+        return render(request, 'survey_form_kr.html', {'form': form})
+    if request.method == 'POST':
+        age = Get_data_with_null_check(request.POST.get('age'))
+        height = Get_data_with_null_check(request.POST.get('height'),'float')
+        weight = Get_data_with_null_check(request.POST.get('weight'),'float')
+        waist_circumference = Get_data_with_null_check(request.POST.get('waist_circumference'),'float')
+
+        gender = Get_data_with_null_check(request.POST.get('gender'))
+        drink = Get_data_with_null_check(request.POST.get('drink'))
+        tobacco = Get_data_with_null_check(request.POST.get('tobacco'))
+        family_diabetes = Get_data_with_null_check(request.POST.get('family_diabetes'))
+        gestational = Get_data_with_null_check(request.POST.get('gestational'))
+        exercise = Get_data_with_null_check(request.POST.get('exercise'))
+        hypertension = Get_data_with_null_check(request.POST.get('hypertension'))
+
+        risk_score = make_korean_diabetes_index(age, waist_circumference, gender, tobacco, drink, family_diabetes, hypertension)
+        bmi = float(weight) / (float(height)/100)**2
+        AI_risk_score = diabetes_screening(age, bmi, waist_circumference, family_diabetes, tobacco )
+
+        userinfo = {
+            'age' : age,
+            'risk_score' : risk_score,
+            'AI_risk_score' : AI_risk_score,
+        }
+        return render(request, 'result_kr.html', userinfo)

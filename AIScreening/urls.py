@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tutorial_web.views import index, survey, event
+from tutorial_web.views import index, survey, event, survey_kr, index_kr
 from django.conf import settings 
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -28,6 +28,8 @@ urlpatterns = [
     path('', index),
     path('survey/', survey),
     path('event/', event),
+    path('kr/', index_kr),
+    path('survey/kr', survey_kr),
     url(r'^static/(?P<path>.*)$', serve, {'document_root':settings.STATIC_ROOT}),
 ]
 

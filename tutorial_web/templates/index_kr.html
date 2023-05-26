@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<p> </p>
+<div class="col">
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> AI Screening for Diabetes </h4>
+        </div>
+        <div class="card-body">
+            <h5> AI 기술을 활용하여 간단한 설문조사를 통해 당신의 당뇨병 위험도를 체크할 수 있습니다. 하노이의과대학병원과 공동연구를 진행하고 있으며 여기에서 중간 결과물을 체험하실 수 있습니다.
+            </h5>
+            <p></p>
+            <div class="py-3 text-bg-warning bg-opacity-25 border-light rounded-3 text-center">
+                <h4> 이것은 아직 정식 인허가를 받지 않은 제품이며 전시용으로 제작되었습니다 </h4>
+            </div>
+            <p></p>    
+            <h5> 이 체험은 당뇨병을 진단하거나 치료를 하는 의료행위가 아닙니다. 따라서, 이 체험 결과와 상관 없이 당뇨병 증상이 있는 경우에는 가까운 병원을 방문하시어 검사를 받으시기 바랍니다. </h5>
+        </div>
+    </div>
+
+    <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3 text-center">
+            <h4 clss="my-0 font-weight-bold"> 이용약관 </h4>
+        </div>
+        <div class="card-body">
+            <h5> 이 연구의 체험을 위하여 다음과 같은 정보를 수집하고 활용합니다. </h5>
+            <h5 class="ms-4"> 
+                <li> 신체정보: 나이, 성별, 키, 몸무게, 허리둘레 </li>
+                <li> 생활습관정보: 흡연습관, 음주습관, 운동습관 </li>
+                <li> 의료정보: 고혈압 진단여부, 가족력, 과거병력(임신성당뇨) </li>
+            </h5>
+            <h5> 수집된 정보는 본 서비스를 위해 개발된 AI가 당뇨병 위험을 계산하기 위해 활용되며 목적 달성 즉시 파기됩니다. 체험을 하시려면 위 내용에 대한 동의를 해 주세요 </h5>
+        </div>
+    </div>
+    <div class="ms-4 me-4">
+        <a href="/survey"> 
+            <button type="button" class="w-100 btn btn-lg btn-primary"> 동의하고 체험하기 </button>
+        </a>
+    </div>
+    
+
+</div>
+
+{% endblock %}
+

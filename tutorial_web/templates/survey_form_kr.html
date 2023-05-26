@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        <div class="py-3 mt-3 text-bg-secondary bg-opacity-50 border-light rounded-3 text-center">
+            <h4> AI Screening 설문지 </h2>
+        </div>
+
+        <div class="form-group row mb-3 mt-3">
+            <label for="age" class="col-sm-2 col-form-label"> 나이 </label>
+            <div class="col-sm-10"> 
+                {{ form.age }}
+            </div>
+        </div>
+
+        <div class="form-group row mb-3 mt-3">
+            <label for="height" class="col-sm-2 col-form-label"> 키 </label>
+            <div class="col-sm-10"> 
+                {{ form.height }}
+            </div>
+        </div>
+
+        <div class="form-group row mb-3 mt-3">
+            <label for="weight" class="col-sm-2 col-form-label"> 몸무게 </label>
+            <div class="col-sm-10"> 
+                {{ form.weight }}
+            </div>
+        </div>
+
+        <div class="form-group row mb-3 mt-3">
+            <label for="waist_circumference" class="col-sm-2 col-form-label">허리둘레 </label>
+            <div class="col-sm-10"> 
+                {{ form.waist_circumference }}
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <h5> 당신의 성별은 무엇입니까? </h5>
+            <input type="radio" class="btn-check" name="gender" value="0" id="gender-male" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="gender-male">남성</label>
+            <input type="radio" class="btn-check" name="gender" value="1" id="gender-female" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="gender-female">여성</label>       
+        </div>
+
+        <div class="mb-2">
+            <h5> 가족 중에 당뇨병 환자가 있습니까? </h5>
+            <input type="radio" class="btn-check" name="family_diabetes" value="0" id="family-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="family-no">아니요</label>
+            <input type="radio" class="btn-check" name="family_diabetes" value="1" id="family-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="family-yes">예</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> 고혈압 진단을 받은 적이 있습니까? </h5>
+            <input type="radio" class="btn-check" name="hypertension" value="0" id="hypertension-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="hypertension-no">아니요</label>
+            <input type="radio" class="btn-check" name="hypertension" value="1" id="hypertension-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="hypertension-yes">예</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> 임신성 당뇨병을 진단받은 적이 있습니까? </h5>
+            <input type="radio" class="btn-check" name="gestational" value="0" id="gestational-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="gestational-no">아니요</label>
+            <input type="radio" class="btn-check" name="gestational" value="1" id="gestational-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="gestational-yes">예</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> 현재 흡연을 하고 계십니까? </h5>
+            <input type="radio" class="btn-check" name="tobacco" value="0" id="tobacco-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="tobacco-no">아니요</label>
+            <input type="radio" class="btn-check" name="tobacco" value="1" id="tobacco-yes" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="tobacco-yes">예</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> 하루 평균 술을 얼마나 마십니까? </h5>
+            <input type="radio" class="btn-check" name="drink" value="0" id="drink-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="drink-no">0~1잔</label>
+            <input type="radio" class="btn-check" name="drink" value="1" id="drink-small" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="drink-small">1~4잔</label>  
+            <input type="radio" class="btn-check" name="drink" value="2" id="drink-heavy" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="drink-heavy">5잔 이상</label>    
+        </div>
+
+        <div class="mb-2">
+            <h5> 하루 평균 얼마나 운동을 하십니까? </h5>
+            <input type="radio" class="btn-check" name="exercise" value="0" id="exercise-no" autocomplete="off" checked>
+            <label class="btn btn-outline-success w-25" for="exercise-no"> 0~30분</label>
+            <input type="radio" class="btn-check" name="exercise" value="1" id="exercise-small" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="exercise-small">30~60분</label>  
+            <input type="radio" class="btn-check" name="exercise" value="2" id="exercise-heavy" autocomplete="off">
+            <label class="btn btn-outline-success w-25" for="exercise-heavy">60분 이상</label>    
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100"> 제출하기 </button> 
+    </form>
+</div>
+
+{% endblock %}
