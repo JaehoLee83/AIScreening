@@ -6,7 +6,7 @@ class SurveyForm(forms.Form):
     height = forms.FloatField(widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"(cm)", "id":"height", "name":"height"}), error_messages={'required' : 'Please write your height'})
     weight = forms.FloatField(widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"(kg)", "id":"weight", "name":"weight"}), error_messages={'required' : 'Please write your weight'})
     waist_circumference = forms.FloatField(widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"(cm)", "id":"waist_circumference", "name":"waist_circumference"}), error_messages={'required' : 'please write your waist circumference'})
-
+    age_kr = forms.IntegerField(widget=forms.NumberInput(attrs={"class":"form-control", "placeholder":"(세)", "id":"age", "name":"age"}), error_messages={'required' : 'Please write your age'})
     def clean(self):
         cleaned_data = super().clean()
         age = cleaned_data.get('age')
