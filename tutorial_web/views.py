@@ -121,7 +121,7 @@ def index_kr(request):
 
  
 
-def survey(request):
+def survey_kr(request):
     if request.method == 'GET':
         form = SurveyForm()
         return render(request, 'survey_form_kr.html', {'form': form})
