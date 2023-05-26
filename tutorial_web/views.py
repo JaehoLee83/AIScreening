@@ -10,10 +10,12 @@ with open('./model/classifier.pkl', 'rb') as f:
 with open('./model/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-def diabetes_screening(age, bmi, waist, family_diabetes, smoking):
-    input = scaler.transform([[age, bmi, waist, family_diabetes, smoking]])
-    predict = clf.predict(input)
-    return predict[0]
+def diabetes_screening(age, bmi, waist, family_diabetes, gestational, threshold=0.4):
+    input = [[waist, age, family_diabetes, bmi, gestational]]
+    input = scaler.transform(input)
+    prob = clf.predict_proba(input)[:,1]
+    predict = 0 if prob < threshold else 1 
+    return predict
 
 def make_korean_diabetes_index(age, waist_circumference, gender, tobacco, drink, family_diabetes, hypertension):
     risk_score = 0
@@ -86,7 +88,7 @@ def survey(request):
 
         risk_score = make_korean_diabetes_index(age, waist_circumference, gender, tobacco, drink, family_diabetes, hypertension)
         bmi = float(weight) / (float(height)/100)**2
-        AI_risk_score = diabetes_screening(age, bmi, waist_circumference, family_diabetes, tobacco )
+        AI_risk_score = diabetes_screening(age=age, bmi=bmi, waist=waist_circumference, family_diabetes=family_diabetes, gestational=gestational )
 
         userinfo = {
             'age' : age,
@@ -141,7 +143,7 @@ def survey_kr(request):
 
         risk_score = make_korean_diabetes_index(age, waist_circumference, gender, tobacco, drink, family_diabetes, hypertension)
         bmi = float(weight) / (float(height)/100)**2
-        AI_risk_score = diabetes_screening(age, bmi, waist_circumference, family_diabetes, tobacco )
+        AI_risk_score = diabetes_screening(age=age, bmi=bmi, waist=waist_circumference, family_diabetes=family_diabetes, gestational=gestational )
 
         userinfo = {
             'age' : age,
