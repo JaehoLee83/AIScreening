@@ -29,7 +29,7 @@ urlpatterns = [
     path('survey/', survey),
     path('event/', event),
     path('kr/', index_kr),
-    path('survey/kr', survey_kr),
+    path('survey/kr/', survey_kr),
     url(r'^static/(?P<path>.*)$', serve, {'document_root':settings.STATIC_ROOT}),
 ]
 
