@@ -126,7 +126,7 @@ def survey_kr(request):
         form = SurveyForm()
         return render(request, 'survey_form_kr.html', {'form': form})
     if request.method == 'POST':
-        age = Get_data_with_null_check(request.POST.get('age'))
+        age = Get_data_with_null_check(request.POST.get('age_kr'))
         height = Get_data_with_null_check(request.POST.get('height'),'float')
         weight = Get_data_with_null_check(request.POST.get('weight'),'float')
         waist_circumference = Get_data_with_null_check(request.POST.get('waist_circumference'),'float')
