@@ -6,15 +6,15 @@
 <div class="col">
     <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
         <div class="card-header py-3 text-center">
-            <h4 clss="my-0 font-weight-bold"> 이벤트 결과 </h4>
+            <h4 clss="my-0 font-weight-bold"> Kết quả MiniGame </h4>
         </div>
         <div class="card-body">
             <div class="py-3 text-bg-warning bg-warning border-light rounded-3 text-center mb-3">
                 {% if event_result == "YES" %}
-                <h1> 당신은 정확히 가격을 예측하셨습니다. 선물을 받아가세요 </h1>
+                <h1> Chúc mừng bạn!! Giá dịch vụ bạn đưa ra hoàn toàn chính xác. Hãy đến để nhận quà </h1>
                 {% endif %} 
                 {% if event_result == "NO" %}
-                <h1> 아쉽습니다. 당신은 가격 예측에 실패하셨습니다. </h1>
+                <h1> Rất tiếc, dự đoán của bạn chưa chính xác. </h1>
                 {% endif %}                 
             </div>
         </div>

@@ -5,43 +5,44 @@
 <div class="col mt-2">
     <div class="card ms-4 me-4 mb-4 rounded-3 shadow-sm">
         <div class="card-header py-3 text-center">
-            <h4 clss="my-0 font-weight-bold"> EVENT : Intensive Care의 월 사용 가격 맞추기! </h4>
+            <h4 clss="my-0 font-weight-bold"> MINIGAME: THỬ TÀI ĐOÁN GIÁ NHẬN QUÀ LIỀN TAY </h4>
+            <h3> Đoán giá dịch vụ Chăm sóc tích cực trong 1 tháng </h3>
         </div>
 
         <div class="card-body align-items-center">
-            <h4 class="my-0 font-weight-bold text-center"> Intensive Care는 아래와 같은 서비스를 고객에게 제공합니다.</h4>
+            <h4 class="my-0 font-weight-bold text-center"> Dịch vụ Chăm sóc tích cực cung cấp cho Quý khách hàng các dịch vụ sau </h4>
             <ul class="list-group w-75 mt-4" style="float:none; margin:0 auto;">
                 <li class="list-group-item">
                     <img class="ms-5" src="{% static 'images/recoding.png' %}"  height="50" alt="Self Recoding"/>
-                    &nbsp;&nbsp;&nbsp; 앱으로 혈당, 운동, 식단을 기록하고 관리할 수 있습니다.
+                    &nbsp;&nbsp;&nbsp; Ghi chép và quản lý tiểu đường, vận động, bữa ăn thông qua ứng dụng.
 
                 </li>
                 <li class="list-group-item">
                     <img class="ms-5" src="{% static 'images/coaching.png' %}"  height="50" alt="Coaching"/>
-                    &nbsp;&nbsp;&nbsp; 전문 간호사가 생활습관 개선을 위해 매일 코칭을 합니다.
+                    &nbsp;&nbsp;&nbsp; Điều dưỡng viên hướng dẫn hàng ngày để bạn có thể cải thiện thói quen sinh hoạt.
                 </li>
                 <li class="list-group-item">
                     &nbsp;
                     <img class="ms-5" src="{% static 'images/consulting.png' %}"  height="50" alt="Consulting"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp; 전문 의료진과의 온라인 상담 및 Q&A를 할 수 있습니다.
+                    &nbsp;&nbsp;&nbsp;&nbsp; Tư vấn và hỏi đáp trực tuyến với đội ngũ nhân viên y tế chuyên nghiệp.
                 </li>
                 <li class="list-group-item">
                     <img class="ms-5" src="{% static 'images/contents.png' %}"  height="50" alt="Consulting"/>
-                    &nbsp;&nbsp;&nbsp; 당뇨병 관리를 위한 온라인 교육 및 전문 콘텐츠를 시청할 수 있습니다.
+                    &nbsp;&nbsp;&nbsp; Xem đào tạo trực tuyến và nội dung chuyên biệt để quản lý bệnh tiểu đường.
                 </li>
             </ul>
             <div class="py-3 w-75 mt-4 text-bg-warning bg-opacity-25 border-light rounded-3 text-center" style="float:none; margin:0 auto;">
-                <h4> 2024년 출시 예정인 이 서비스의 한 달 가격은 얼마일까요? </h4>
+                <h4> Dịch vụ này sẽ được ra mắt vào năm 2024. Bạn nghĩ chi phí cần chi trả mỗi tháng cho dịch vụ này là bao nhiêu? </h4>
             </div>
             <form method="post">
                 {% csrf_token %}
                 <div class="form-group row mb-3 mt-3 w-75" style="float:none; margin:0 auto;">
-                    <label for="price" class="col-sm-2 col-form-label"> 가격 </label>
+                    <label for="price" class="col-sm-2 col-form-label"> Chi phí: </label>
                     <div class="col-sm-10"> 
                         {{ form.price }}
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary w-100"> 결과 확인하기 </button> 
+                <button type="submit" class="btn btn-primary w-100"> Kiểm tra kết quả </button> 
             </form>
             
         </div>
